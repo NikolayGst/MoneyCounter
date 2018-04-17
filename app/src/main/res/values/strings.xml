@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">MoneyCounter</string>
+
+  <string name="hourly_rate_layout"><![CDATA[Часовая ставка: <font color="#d17359">%,.2f%s</font>]]></string>
 </resources>

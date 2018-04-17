@@ -1,8 +1,10 @@
 package com.niko.moneycounter;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
@@ -15,21 +17,33 @@ public class MainActivity extends AppCompatActivity {
   private Button btnStart;
   private Button btnPause;
   private Button btnStop;
+  private TextView horlyRateView;
   private TextView timeTextView;
   private TextView moneyTextView;
 
   private TimeManager timerManager;
+
+  private float moneyDelta;
+  private String moneyRate;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    initMoneySettings();
+
     initViews();
 
     initTimeManager();
 
     handleListeners();
+  }
+
+  private void initMoneySettings() {
+    SharedPreferences sharedPreferences = getSharedPreferences(Const.SHARED_NAME, MODE_PRIVATE);
+    moneyDelta = sharedPreferences.getFloat(Const.MONEY_DELTA, 8.6f);
+    moneyRate = sharedPreferences.getString(Const.MONEY_RATE, "$");
   }
 
   private void initViews() {
@@ -43,12 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
     btnStop = findViewById(R.id.btnStop);
 
+    horlyRateView = findViewById(R.id.hourlyRate);
+
     timeTextView = findViewById(R.id.time);
 
     moneyTextView = findViewById(R.id.money);
 
-    timeTextView.setText(TimeUtils.formatTime(0));
-    moneyTextView.setText(TimeUtils.formatMoney(8, 0));
+    horlyRateView.setText(Html.fromHtml(String.format(getString(R.string.hourly_rate_layout), moneyDelta, moneyRate)));
 
   }
 
@@ -79,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
 
       @Override
       public void onTick(long time) {
-        moneyTextView.setText(TimeUtils.formatMoney(8, time));
-        checkSizeMoney(TimeUtils.formatMoney(8, time));
+        moneyTextView.setText(TimeUtils.formatMoney(moneyDelta, time));
+        checkSizeMoney(TimeUtils.formatMoney(moneyDelta, time));
         timeTextView.setText(TimeUtils.formatTime(time));
       }
     });
@@ -89,15 +104,20 @@ public class MainActivity extends AppCompatActivity {
   private void checkSizeMoney(String money) {
     Log.d("TAG", "money size: " + money.length());
     if (money.length() <= 6) {
-      moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.money_text_size_large_two));
+      moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+          getResources().getDimensionPixelSize(R.dimen.money_text_size_large_two));
     } else if (money.length() <= 7) {
-      moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.money_text_size_large));
+      moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+          getResources().getDimensionPixelSize(R.dimen.money_text_size_large));
     } else if (money.length() <= 9) {
-      moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.money_text_size_biggest));
-    } else if (money.length() <= 11){
-      moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.money_text_size_big));
+      moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+          getResources().getDimensionPixelSize(R.dimen.money_text_size_biggest));
+    } else if (money.length() <= 11) {
+      moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+          getResources().getDimensionPixelSize(R.dimen.money_text_size_big));
     } else if (money.length() > 12) {
-      moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.money_text_size_small));
+      moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+          getResources().getDimensionPixelSize(R.dimen.money_text_size_small));
     }
   }
 

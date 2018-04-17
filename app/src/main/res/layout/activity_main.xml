@@ -33,8 +33,7 @@
       android:textSize="@dimen/hourlyRate.text.size.large"
       android:fontFamily="sans-serif-light"
       android:textColor="@color/cyan_100"
-      android:gravity="center"
-      android:text="Часовая ставка: 8$" />
+      android:gravity="center"/>
 
     <TextView
       android:id="@+id/money"

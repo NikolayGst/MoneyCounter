@@ -45,7 +45,7 @@ public class TimeManager extends ContextWrapper {
 
   public TimeManager(Context base) {
     super(base);
-    sPref = getSharedPreferences(Const.SHARED_TIMER_NAME, MODE_PRIVATE);
+    sPref = getSharedPreferences(Const.SHARED_NAME, MODE_PRIVATE);
 
     handler = new Handler();
 
