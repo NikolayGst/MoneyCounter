@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 
 public class AuthorActivity extends AppCompatActivity {
 
@@ -14,9 +15,18 @@ public class AuthorActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_author);
 
+    initViews();
+
+    initListeners();
+  }
+
+  private void initViews() {
+    ImageView authorImage = findViewById(R.id.authorImage);
     Toolbar toolbar = findViewById(R.id.authorToolbar);
     toolbar.setTitle(R.string.author);
+  }
 
+  private void initListeners() {
     findViewById(R.id.vk).setOnClickListener(view -> {
       try {
         Intent intent = new Intent(Intent.ACTION_VIEW,
