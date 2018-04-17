@@ -1,5 +1,6 @@
 package com.niko.moneycounter;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.Menu;
 import android.widget.Button;
 import android.widget.TextView;
 import com.niko.moneycounter.TimeManager.OnTimeManagerListener;
@@ -47,9 +47,13 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void initViews() {
-
-    Toolbar toolbar = findViewById(R.id.my_toolbar);
-    setSupportActionBar(toolbar);
+    Toolbar toolbar = findViewById(R.id.mainToolbar);
+    toolbar.setTitle(R.string.app_name);
+    toolbar.inflateMenu(R.menu.main_menu);
+    toolbar.setOnMenuItemClickListener(item -> {
+      startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+      return true;
+    });
 
     btnStart = findViewById(R.id.btnStart);
 
@@ -140,14 +144,5 @@ public class MainActivity extends AppCompatActivity {
     timerManager.unregisterManager();
     super.onStop();
   }
-
-  // Menu icons are inflated just as they were with actionbar
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    // getMenuInflater().inflate(R.menu.menu_main, menu);
-    return true;
-  }
-
 
 }
