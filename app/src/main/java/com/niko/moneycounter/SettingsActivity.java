@@ -59,11 +59,15 @@ public class SettingsActivity extends AppCompatActivity {
 
     btnSave.setOnClickListener(v -> {
       if (currency.getText().length() > 0 && hourlyRate.getText().length() > 0) {
-        sPref.edit()
-            .putString(Const.MONEY_CURRENCY, currency.getText().toString())
-            .putFloat(Const.MONEY_DELTA, Float.parseFloat(hourlyRate.getText().toString()))
-            .apply();
-        finish();
+        if (Float.parseFloat(hourlyRate.getText().toString()) > 0) {
+          sPref.edit()
+              .putString(Const.MONEY_CURRENCY, currency.getText().toString())
+              .putFloat(Const.MONEY_DELTA, Float.parseFloat(hourlyRate.getText().toString()))
+              .apply();
+          finish();
+        } else {
+          Toast.makeText(this, R.string.toast_error_zero, Toast.LENGTH_SHORT).show();
+        }
       } else {
         Toast.makeText(this, R.string.toast_error_empty, Toast.LENGTH_SHORT).show();
       }

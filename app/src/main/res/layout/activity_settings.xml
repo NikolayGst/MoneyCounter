@@ -76,7 +76,7 @@
       android:textColor="@color/grey_100"
       android:hint="@string/enter.hourly.rate.text"
       android:textSize="@dimen/setting.text.size.big.one"
-      android:inputType="text" />
+      android:inputType="numberDecimal" />
     
     <Button
       android:id="@+id/btnSave"
