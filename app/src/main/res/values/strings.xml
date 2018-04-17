@@ -13,6 +13,7 @@
   <string name="toast.error.zero">Ошибка, ставка должна быть больше 0</string>
   <string name="btn.text.save">Сохранить</string>
   <string name="author">Об авторе</string>
+  <string name="powered">Powered by Nikolay Gustilin</string>
 
   <string-array name="currencies">
     <item>₴</item>

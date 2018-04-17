@@ -21,4 +21,15 @@
   <dimen name="setting.text.size.big.two">25sp</dimen>
   <dimen name="btn.save.margin.large">64dp</dimen>
   <dimen name="btn.save.margin.big">16dp</dimen>
+  <!--Author Activity-->
+  <dimen name="card.margin.large">50dp</dimen>
+  <dimen name="card.margin.big">16dp</dimen>
+  <dimen name="card.padding.small">8dp</dimen>
+  <dimen name="image.author.width">150dp</dimen>
+  <dimen name="image.author.height">200dp</dimen>
+  <dimen name="textview.powered.text.size">20sp</dimen>
+  <dimen name="btns.margin.big">16dp</dimen>
+  <dimen name="image.vk.size">60dp</dimen>
+  <dimen name="image.git.size">65dp</dimen>
+  <dimen name="image.soc.margin.small">8dp</dimen>
 </resources>
