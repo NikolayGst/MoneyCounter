@@ -119,19 +119,19 @@ public class MainActivity extends AppCompatActivity {
     Log.d("TAG", "money size: " + money.length());
     if (money.length() <= 6) {
       moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-          getResources().getDimensionPixelSize(R.dimen.money_text_size_large_two));
+          getResources().getDimensionPixelSize(R.dimen.main_money_text_size_large_two));
     } else if (money.length() <= 7) {
       moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-          getResources().getDimensionPixelSize(R.dimen.money_text_size_large));
+          getResources().getDimensionPixelSize(R.dimen.main_money_text_size_large));
     } else if (money.length() <= 9) {
       moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-          getResources().getDimensionPixelSize(R.dimen.money_text_size_biggest));
+          getResources().getDimensionPixelSize(R.dimen.main_money_text_size_biggest));
     } else if (money.length() <= 11) {
       moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-          getResources().getDimensionPixelSize(R.dimen.money_text_size_big));
+          getResources().getDimensionPixelSize(R.dimen.main_money_text_size_big));
     } else if (money.length() > 12) {
       moneyTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-          getResources().getDimensionPixelSize(R.dimen.money_text_size_small));
+          getResources().getDimensionPixelSize(R.dimen.main_money_text_size_small));
     }
   }
 

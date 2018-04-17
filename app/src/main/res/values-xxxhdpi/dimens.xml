@@ -1,0 +1,31 @@
+<resources>
+  <dimen name="author.btns.margin.big">20dp</dimen>
+  <dimen name="author.card.margin.big">20dp</dimen>
+  <dimen name="author.card.margin.large">62.5dp</dimen>
+  <dimen name="author.card.padding.small">10dp</dimen>
+  <dimen name="author.image.author.height">250dp</dimen>
+  <dimen name="author.image.author.width">187.5dp</dimen>
+  <dimen name="author.image.git.size">81.2dp</dimen>
+  <dimen name="author.image.soc.margin.small">10dp</dimen>
+  <dimen name="author.image.vk.size">75dp</dimen>
+  <dimen name="author.textview.powered.text.size">25sp</dimen>
+  <dimen name="main.btn.margin.biggest">40dp</dimen>
+  <dimen name="main.btn.size">62.5dp</dimen>
+  <dimen name="main.btns.margin.biggest">40dp</dimen>
+  <dimen name="main.hourlyRate.padding.small">10dp</dimen>
+  <dimen name="main.hourlyRate.text.size.big">20sp</dimen>
+  <dimen name="main.hourlyRate.text.size.large">40sp</dimen>
+  <dimen name="main.money.margin.large">165dp</dimen>
+  <dimen name="main.money.text.size.big">75sp</dimen>
+  <dimen name="main.money.text.size.biggest">93.8sp</dimen>
+  <dimen name="main.money.text.size.large">106.2sp</dimen>
+  <dimen name="main.money.text.size.large_two">118.8sp</dimen>
+  <dimen name="main.money.text.size.small">62.5sp</dimen>
+  <dimen name="main.time.margin.small">10dp</dimen>
+  <dimen name="main.time.text.size.biggest">37.5sp</dimen>
+  <dimen name="setting.btn.save.margin.big">20dp</dimen>
+  <dimen name="setting.btn.save.margin.large">80dp</dimen>
+  <dimen name="setting.padding.big">20dp</dimen>
+  <dimen name="setting.text.size.big.one">25sp</dimen>
+  <dimen name="setting.text.size.big.two">31.2sp</dimen>
+</resources>

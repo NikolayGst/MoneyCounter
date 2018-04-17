@@ -77,15 +77,15 @@
       android:hint="@string/enter.hourly.rate.text"
       android:textSize="@dimen/setting.text.size.big.one"
       android:inputType="numberDecimal" />
-    
+
     <Button
       android:id="@+id/btnSave"
       android:layout_width="match_parent"
-      android:layout_marginTop="@dimen/btn.save.margin.large"
+      android:layout_marginTop="@dimen/setting.btn.save.margin.large"
       android:text="@string/btn.text.save"
       android:textColor="@color/white"
-      android:layout_marginLeft="@dimen/btn.save.margin.big"
-      android:layout_marginRight="@dimen/btn.save.margin.big"
+      android:layout_marginLeft="@dimen/setting.btn.save.margin.big"
+      android:layout_marginRight="@dimen/setting.btn.save.margin.big"
       android:background="@color/cyan_300"
       android:layout_below="@id/hourlyRate"
       android:layout_height="wrap_content" />

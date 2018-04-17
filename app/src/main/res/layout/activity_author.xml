@@ -31,16 +31,16 @@
       android:id="@+id/cardAvatar"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/card.margin.large"
-      android:layout_marginBottom="@dimen/card.margin.big"
+      android:layout_marginTop="@dimen/author.card.margin.large"
+      android:layout_marginBottom="@dimen/author.card.margin.big"
       android:layout_centerHorizontal="true"
       android:layout_gravity="center"
       app:cardElevation="0dp"
-      app:contentPadding="@dimen/card.padding.small">
+      app:contentPadding="@dimen/author.card.padding.small">
       <ImageView
         android:id="@+id/authorImage"
-        android:layout_width="@dimen/image.author.width"
-        android:layout_height="@dimen/image.author.height"
+        android:layout_width="@dimen/author.image.author.width"
+        android:layout_height="@dimen/author.image.author.height"
         android:scaleType="centerCrop"
         android:src="@drawable/avatar"/>
     </android.support.v7.widget.CardView>
@@ -53,28 +53,28 @@
       android:gravity="center"
       android:text="@string/powered"
       android:textColor="@color/white"
-      android:textSize="@dimen/textview.powered.text.size" />
+      android:textSize="@dimen/author.textview.powered.text.size" />
 
     <LinearLayout
       android:layout_below="@+id/txtPowered"
       android:gravity="center"
-      android:layout_marginTop="@dimen/btns.margin.big"
+      android:layout_marginTop="@dimen/author.btns.margin.big"
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
       <ImageView
         android:id="@+id/vk"
-        android:layout_width="@dimen/image.vk.size"
-        android:layout_height="@dimen/image.vk.size"
-        android:layout_marginEnd="@dimen/image.soc.margin.small"
-        android:layout_marginRight="@dimen/image.soc.margin.small"
+        android:layout_width="@dimen/author.image.vk.size"
+        android:layout_height="@dimen/author.image.vk.size"
+        android:layout_marginEnd="@dimen/author.image.soc.margin.small"
+        android:layout_marginRight="@dimen/author.image.soc.margin.small"
         android:src="@drawable/vk"/>
 
       <ImageView
         android:id="@+id/git"
-        android:layout_width="@dimen/image.git.size"
-        android:layout_height="@dimen/image.git.size"
-        android:layout_marginEnd="@dimen/image.soc.margin.small"
-        android:layout_marginRight="@dimen/image.soc.margin.small"
+        android:layout_width="@dimen/author.image.git.size"
+        android:layout_height="@dimen/author.image.git.size"
+        android:layout_marginEnd="@dimen/author.image.soc.margin.small"
+        android:layout_marginRight="@dimen/author.image.soc.margin.small"
         android:src="@drawable/github"/>
     </LinearLayout>
 

@@ -29,8 +29,8 @@
       android:id="@+id/hourlyRate"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:padding="@dimen/hourlyRate.padding.small"
-      android:textSize="@dimen/hourlyRate.text.size.large"
+      android:padding="@dimen/main.hourlyRate.padding.small"
+      android:textSize="@dimen/main.hourlyRate.text.size.large"
       android:fontFamily="sans-serif-light"
       android:textColor="@color/cyan_100"
       android:gravity="center"/>
@@ -39,7 +39,7 @@
       android:id="@+id/money"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/money.margin.large"
+      android:layout_marginTop="@dimen/main.money.margin.large"
       android:gravity="center"
       android:textColor="@color/cyan_100" />
 
@@ -47,38 +47,38 @@
       android:id="@+id/time"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/time.margin.small"
+      android:layout_marginTop="@dimen/main.time.margin.small"
       android:layout_below="@id/money"
       android:gravity="center"
       android:textColor="@color/orange_300"
-      android:textSize="@dimen/time.text.size.biggest" />
+      android:textSize="@dimen/main.time.text.size.biggest" />
 
     <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginBottom="@dimen/btns.margin.biggest"
+      android:layout_marginBottom="@dimen/main.btns.margin.biggest"
       android:layout_alignParentBottom="true">
       <Button
         android:id="@+id/btnStart"
-        android:layout_width="@dimen/btn.size"
-        android:layout_height="@dimen/btn.size"
-        android:layout_marginRight="@dimen/btn.margin.biggest"
+        android:layout_width="@dimen/main.btn.size"
+        android:layout_height="@dimen/main.btn.size"
+        android:layout_marginRight="@dimen/main.btn.margin.biggest"
         android:layout_toLeftOf="@id/btnPause"
         android:background="@drawable/btn_start_selector" />
 
       <Button
         android:id="@+id/btnPause"
-        android:layout_width="@dimen/btn.size"
-        android:layout_height="@dimen/btn.size"
+        android:layout_width="@dimen/main.btn.size"
+        android:layout_height="@dimen/main.btn.size"
         android:layout_centerHorizontal="true"
         android:background="@drawable/btn_pause_selector"
         android:enabled="false" />
 
       <Button
         android:id="@+id/btnStop"
-        android:layout_width="@dimen/btn.size"
-        android:layout_height="@dimen/btn.size"
-        android:layout_marginLeft="@dimen/btn.margin.biggest"
+        android:layout_width="@dimen/main.btn.size"
+        android:layout_height="@dimen/main.btn.size"
+        android:layout_marginLeft="@dimen/main.btn.margin.biggest"
         android:layout_toRightOf="@id/btnPause"
         android:background="@drawable/btn_stop_selector"
         android:enabled="false" />
