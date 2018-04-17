@@ -26,6 +26,70 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+    <TextView
+      android:id="@+id/textCurrency"
+      android:layout_width="match_parent"
+      android:text="@string/textview.text.currency"
+      android:textColor="@color/cyan_100"
+      android:paddingTop="@dimen/setting.padding.big"
+      android:paddingLeft="@dimen/setting.padding.big"
+      android:textSize="@dimen/setting.text.size.big.two"
+      android:layout_height="wrap_content" />
+
+    <EditText
+      android:id="@+id/currency"
+      android:layout_below="@id/textCurrency"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="@dimen/setting.padding.big"
+      android:paddingLeft="@dimen/setting.padding.big"
+      android:paddingBottom="@dimen/setting.padding.big"
+      android:hint="@string/select.currency.text"
+      android:inputType="text"
+      android:maxLength="4"
+      android:clickable="false"
+      android:focusable="false"
+      android:textColorHint="@color/grey_200"
+      android:textColor="@color/grey_100"
+      android:textSize="@dimen/setting.text.size.big.one" />
+
+    <TextView
+      android:id="@+id/textHourly"
+      android:layout_width="match_parent"
+      android:layout_below="@id/currency"
+      android:text="@string/textview.text.hourly.rate"
+      android:textColor="@color/cyan_100"
+      android:paddingTop="@dimen/setting.padding.big"
+      android:paddingLeft="@dimen/setting.padding.big"
+      android:textSize="@dimen/setting.text.size.big.two"
+      android:layout_height="wrap_content" />
+
+    <EditText
+      android:id="@+id/hourlyRate"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/textHourly"
+      android:paddingTop="@dimen/setting.padding.big"
+      android:paddingLeft="@dimen/setting.padding.big"
+      android:paddingBottom="@dimen/setting.padding.big"
+      android:textColorHint="@color/grey_200"
+      android:textColor="@color/grey_100"
+      android:hint="@string/enter.hourly.rate.text"
+      android:textSize="@dimen/setting.text.size.big.one"
+      android:inputType="text" />
+    
+    <Button
+      android:id="@+id/btnSave"
+      android:layout_width="match_parent"
+      android:layout_marginTop="@dimen/btn.save.margin.large"
+      android:text="@string/btn.text.save"
+      android:textColor="@color/white"
+      android:layout_marginLeft="@dimen/btn.save.margin.big"
+      android:layout_marginRight="@dimen/btn.save.margin.big"
+      android:background="@color/cyan_300"
+      android:layout_below="@id/hourlyRate"
+      android:layout_height="wrap_content" />
+
   </RelativeLayout>
 
 

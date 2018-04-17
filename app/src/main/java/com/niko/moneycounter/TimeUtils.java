@@ -11,9 +11,9 @@ public class TimeUtils {
     return String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, seconds);
   }
 
-  public static String formatMoney(float moneyDelta, long time) {
+  public static String formatMoney(float moneyDelta,String currency, long time) {
     float result = (time / 1000f) * moneyDelta / 3600f;
-    return String.format(Locale.getDefault(), "%,.2f", result) + "$";
+    return String.format(Locale.getDefault(), "%,.2f", result) + currency;
   }
 
 }

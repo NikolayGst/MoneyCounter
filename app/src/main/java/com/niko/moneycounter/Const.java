@@ -6,7 +6,7 @@ public class Const {
   public static final String ELAPSED_TIME = "elapsed_time";
 
   public static final String MONEY_DELTA = "money_delta";
-  public static final String MONEY_RATE = "money_rate";
+  public static final String MONEY_CURRENCY = "money_currency";
 
   public static final String RUNNING_STATUS = "running_status";
 

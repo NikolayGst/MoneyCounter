@@ -24,14 +24,15 @@ public class MainActivity extends AppCompatActivity {
   private TimeManager timerManager;
 
   private float moneyDelta;
-  private String moneyRate;
+  private String moneyCurrency;
+  private SharedPreferences sharedPreferences;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    initMoneySettings();
+    initSharedPref();
 
     initViews();
 
@@ -40,10 +41,14 @@ public class MainActivity extends AppCompatActivity {
     handleListeners();
   }
 
+  private void initSharedPref() {
+    sharedPreferences = getSharedPreferences(Const.SHARED_NAME, MODE_PRIVATE);
+  }
+
   private void initMoneySettings() {
-    SharedPreferences sharedPreferences = getSharedPreferences(Const.SHARED_NAME, MODE_PRIVATE);
-    moneyDelta = sharedPreferences.getFloat(Const.MONEY_DELTA, 8.6f);
-    moneyRate = sharedPreferences.getString(Const.MONEY_RATE, "$");
+    moneyDelta = sharedPreferences.getFloat(Const.MONEY_DELTA, 1f);
+    moneyCurrency = sharedPreferences.getString(Const.MONEY_CURRENCY, "$");
+    horlyRateView.setText(Html.fromHtml(String.format(getString(R.string.hourly_rate_layout), moneyDelta, moneyCurrency)));
   }
 
   private void initViews() {
@@ -66,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
     timeTextView = findViewById(R.id.time);
 
     moneyTextView = findViewById(R.id.money);
-
-    horlyRateView.setText(Html.fromHtml(String.format(getString(R.string.hourly_rate_layout), moneyDelta, moneyRate)));
 
   }
 
@@ -98,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
 
       @Override
       public void onTick(long time) {
-        moneyTextView.setText(TimeUtils.formatMoney(moneyDelta, time));
-        checkSizeMoney(TimeUtils.formatMoney(moneyDelta, time));
+        moneyTextView.setText(TimeUtils.formatMoney(moneyDelta, moneyCurrency, time));
+        checkSizeMoney(TimeUtils.formatMoney(moneyDelta, moneyCurrency, time));
         timeTextView.setText(TimeUtils.formatTime(time));
       }
     });
@@ -135,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
   @Override
   protected void onStart() {
+    initMoneySettings();
     timerManager.registerManager();
     super.onStart();
   }
