@@ -11,6 +11,7 @@
   <string name="enter.hourly.rate.text">Введите Вашу ставку</string>
   <string name="toast.error.empty">Ошибка, заполнены не все поля.</string>
   <string name="btn.text.save">Сохранить</string>
+  <string name="author">Об авторе</string>
 
   <string-array name="currencies">
     <item>₴</item>

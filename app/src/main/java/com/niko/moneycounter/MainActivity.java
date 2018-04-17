@@ -56,7 +56,14 @@ public class MainActivity extends AppCompatActivity {
     toolbar.setTitle(R.string.app_name);
     toolbar.inflateMenu(R.menu.main_menu);
     toolbar.setOnMenuItemClickListener(item -> {
-      startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+      switch (item.getItemId()) {
+        case R.id.item_settings:
+          startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+          break;
+        case R.id.item_author:
+          startActivity(new Intent(MainActivity.this, AuthorActivity.class));
+          break;
+      }
       return true;
     });
 
