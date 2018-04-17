@@ -1,0 +1,92 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fitsSystemWindows="true"
+  android:background="@color/background"
+  android:orientation="vertical">
+
+  <android.support.design.widget.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <android.support.v7.widget.Toolbar
+      android:id="@+id/my_toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:background="?attr/colorPrimary"
+      app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+  </android.support.design.widget.AppBarLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <TextView
+      android:id="@+id/hourlyRate"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/hourlyRate.padding.small"
+      android:textSize="@dimen/hourlyRate.text.size.large"
+      android:fontFamily="sans-serif-light"
+      android:textColor="@color/cyan_100"
+      android:gravity="center"
+      android:text="Часовая ставка: 8$" />
+
+    <TextView
+      android:id="@+id/money"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/money.margin.large"
+      android:gravity="center"
+      android:textColor="@color/cyan_100" />
+
+    <TextView
+      android:id="@+id/time"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/time.margin.small"
+      android:layout_below="@id/money"
+      android:gravity="center"
+      android:textColor="@color/orange_300"
+      android:textSize="@dimen/time.text.size.biggest" />
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/btns.margin.biggest"
+      android:layout_alignParentBottom="true">
+      <Button
+        android:id="@+id/btnStart"
+        android:layout_width="@dimen/btn.size"
+        android:layout_height="@dimen/btn.size"
+        android:layout_marginRight="@dimen/btn.margin.biggest"
+        android:layout_toLeftOf="@id/btnPause"
+        android:background="@drawable/btn_start_selector" />
+
+      <Button
+        android:id="@+id/btnPause"
+        android:layout_width="@dimen/btn.size"
+        android:layout_height="@dimen/btn.size"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_pause_selector"
+        android:enabled="false" />
+
+      <Button
+        android:id="@+id/btnStop"
+        android:layout_width="@dimen/btn.size"
+        android:layout_height="@dimen/btn.size"
+        android:layout_marginLeft="@dimen/btn.margin.biggest"
+        android:layout_toRightOf="@id/btnPause"
+        android:background="@drawable/btn_stop_selector"
+        android:enabled="false" />
+    </RelativeLayout>
+
+
+  </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

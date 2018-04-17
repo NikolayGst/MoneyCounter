@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="hourlyRate.padding.small">8dp</dimen>
+  <dimen name="hourlyRate.text.size.big">16sp</dimen>
+  <dimen name="hourlyRate.text.size.large">32sp</dimen>
+  <dimen name="money.margin.large">128dp</dimen>
+  <dimen name="money.text.size.small">50sp</dimen>
+  <dimen name="money.text.size.big">60sp</dimen>
+  <dimen name="money.text.size.biggest">75sp</dimen>
+  <dimen name="money.text.size.large">85sp</dimen>
+  <dimen name="money.text.size.large_two">95sp</dimen>
+  <dimen name="time.margin.small">8dp</dimen>
+  <dimen name="time.text.size.biggest">30sp</dimen>
+  <dimen name="btns.margin.biggest">32dp</dimen>
+  <dimen name="btn.size">50dp</dimen>
+  <dimen name="btn.margin.biggest">32dp</dimen>
+</resources>
