@@ -1,4 +1,4 @@
-package com.niko.moneycounter;
+package com.niko.moneycounter.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +10,11 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.widget.Button;
 import android.widget.TextView;
-import com.niko.moneycounter.TimeManager.OnTimeManagerListener;
+import com.niko.moneycounter.utils.Const;
+import com.niko.moneycounter.R;
+import com.niko.moneycounter.manager.TimeManager;
+import com.niko.moneycounter.manager.TimeManager.OnTimeManagerListener;
+import com.niko.moneycounter.utils.TimeUtils;
 
 public class MainActivity extends AppCompatActivity {
 

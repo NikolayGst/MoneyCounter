@@ -1,4 +1,4 @@
-package com.niko.moneycounter;
+package com.niko.moneycounter.ui;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import com.niko.moneycounter.R;
 
 public class AuthorActivity extends AppCompatActivity {
 

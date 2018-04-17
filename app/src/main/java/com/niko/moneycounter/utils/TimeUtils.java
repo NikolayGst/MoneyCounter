@@ -1,4 +1,4 @@
-package com.niko.moneycounter;
+package com.niko.moneycounter.utils;
 
 import java.util.Locale;
 

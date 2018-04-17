@@ -1,4 +1,4 @@
-package com.niko.moneycounter;
+package com.niko.moneycounter.ui;
 
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.niko.moneycounter.utils.Const;
+import com.niko.moneycounter.R;
 
 public class SettingsActivity extends AppCompatActivity {
 

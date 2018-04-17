@@ -1,10 +1,11 @@
-package com.niko.moneycounter;
+package com.niko.moneycounter.manager;
 
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.util.Log;
+import com.niko.moneycounter.utils.Const;
 
 public class TimeManager extends ContextWrapper {
 
