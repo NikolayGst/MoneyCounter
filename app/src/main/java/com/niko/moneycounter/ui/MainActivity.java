@@ -14,7 +14,8 @@ import com.niko.moneycounter.utils.Const;
 import com.niko.moneycounter.R;
 import com.niko.moneycounter.manager.TimeManager;
 import com.niko.moneycounter.manager.TimeManager.OnTimeManagerListener;
-import com.niko.moneycounter.utils.TimeUtils;
+import com.niko.moneycounter.utils.AppUtils;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
   private void initMoneySettings() {
     moneyDelta = sharedPreferences.getFloat(Const.MONEY_DELTA, 1f);
     moneyCurrency = sharedPreferences.getString(Const.MONEY_CURRENCY, "$");
-    horlyRateView.setText(Html.fromHtml(String.format(getString(R.string.hourly_rate_layout), moneyDelta, moneyCurrency)));
+    horlyRateView.setText(Html.fromHtml(String.format(Locale.ENGLISH, getString(R.string.hourly_rate_layout), moneyDelta, moneyCurrency)));
   }
 
   private void initViews() {
@@ -112,9 +113,9 @@ public class MainActivity extends AppCompatActivity {
 
       @Override
       public void onTick(long time) {
-        moneyTextView.setText(TimeUtils.formatMoney(moneyDelta, moneyCurrency, time));
-        checkSizeMoney(TimeUtils.formatMoney(moneyDelta, moneyCurrency, time));
-        timeTextView.setText(TimeUtils.formatTime(time));
+        moneyTextView.setText(AppUtils.formatMoney(moneyDelta, moneyCurrency, time));
+        checkSizeMoney(AppUtils.formatMoney(moneyDelta, moneyCurrency, time));
+        timeTextView.setText(AppUtils.formatTime(time));
       }
     });
   }

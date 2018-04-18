@@ -7,11 +7,14 @@ import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.niko.moneycounter.utils.AppUtils;
 import com.niko.moneycounter.utils.Const;
 import com.niko.moneycounter.R;
+import java.util.Arrays;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -38,7 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
   private void initMoneySettings() {
     sPref = getSharedPreferences(Const.SHARED_NAME, MODE_PRIVATE);
     currency.setText(sPref.getString(Const.MONEY_CURRENCY, null));
-    hourlyRate.setText(sPref.getFloat(Const.MONEY_DELTA, 0) == 0 ? null : String.valueOf(sPref.getFloat(Const.MONEY_DELTA, 0)));
+    hourlyRate.setText(sPref.getFloat(Const.MONEY_DELTA, 0) == 0 ? null : AppUtils.formatMoney(sPref.getFloat(Const.MONEY_DELTA, 0)));
   }
 
   private void initViews() {
@@ -61,14 +64,18 @@ public class SettingsActivity extends AppCompatActivity {
 
     btnSave.setOnClickListener(v -> {
       if (currency.getText().length() > 0 && hourlyRate.getText().length() > 0) {
-        if (Float.parseFloat(hourlyRate.getText().toString()) > 0) {
+        if (!Arrays.asList(currencies).contains(currency.getText().toString())) {
+          Toast.makeText(this, R.string.incorrect_select_currency, Toast.LENGTH_SHORT).show();
+        } /*else if (!TextUtils.isDigitsOnly(hourlyRate.getText().toString())){
+          Toast.makeText(this, "Некорректно введена часовая ставка", Toast.LENGTH_SHORT).show();
+        }*/ else if (Float.parseFloat(hourlyRate.getText().toString()) <= 0) {
+          Toast.makeText(this, R.string.toast_error_zero, Toast.LENGTH_SHORT).show();
+        } else {
           sPref.edit()
               .putString(Const.MONEY_CURRENCY, currency.getText().toString())
               .putFloat(Const.MONEY_DELTA, Float.parseFloat(hourlyRate.getText().toString()))
               .apply();
           finish();
-        } else {
-          Toast.makeText(this, R.string.toast_error_zero, Toast.LENGTH_SHORT).show();
         }
       } else {
         Toast.makeText(this, R.string.toast_error_empty, Toast.LENGTH_SHORT).show();

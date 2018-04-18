@@ -15,7 +15,7 @@
   <dimen name="main.hourlyRate.padding.small">10dp</dimen>
   <dimen name="main.hourlyRate.text.size.big">20sp</dimen>
   <dimen name="main.hourlyRate.text.size.large">40sp</dimen>
-  <dimen name="main.money.margin.large">165dp</dimen>
+  <dimen name="main.money.margin.large">170dp</dimen>
   <dimen name="main.money.text.size.big">75sp</dimen>
   <dimen name="main.money.text.size.biggest">93.8sp</dimen>
   <dimen name="main.money.text.size.large">106.2sp</dimen>

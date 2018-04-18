@@ -11,6 +11,7 @@
   <string name="textview.text.currency">Currency:</string>
   <string name="textview.text.hourly.rate">Hourly rate:</string>
   <string name="enter.hourly.rate.text">Enter your hourly rate</string>
+  <string name="incorrect_select_currency">Invalid currency selected</string>
   <string name="toast.error.empty">Error, not all fields are filled.</string>
   <string name="toast.error.zero">Error, rate must be greater than 0</string>
   <string name="btn.text.save">Save</string>
