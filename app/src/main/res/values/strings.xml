@@ -1,5 +1,6 @@
 <resources>
   <string name="app_name">MoneyCounter</string>
+  <string name="title">Счетчик денег</string>
   <string name="hourly.rate.layout"><![CDATA[Часовая ставка: <font color="#d17359">%,.2f%s</font>]]></string>
   <string name="settings">Настройки</string>
   <string name="select.currency.title">Выбор валюты</string>
@@ -14,7 +15,6 @@
   <string name="btn.text.save">Сохранить</string>
   <string name="author">Об авторе</string>
   <string name="powered">Powered by Nikolay Gustilin</string>
-
   <string-array name="currencies">
     <item>₴</item>
     <item>$</item>

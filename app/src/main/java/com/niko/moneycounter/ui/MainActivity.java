@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void initViews() {
     Toolbar toolbar = findViewById(R.id.mainToolbar);
-    toolbar.setTitle(R.string.app_name);
+    toolbar.setTitle(R.string.title);
     toolbar.inflateMenu(R.menu.main_menu);
     toolbar.setOnMenuItemClickListener(item -> {
       switch (item.getItemId()) {
