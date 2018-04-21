@@ -50,14 +50,18 @@ public class TimeManager extends ContextWrapper {
 
     handler = new Handler();
 
+    //создаем анонимный внутренний класс Runnable
     timerTask = () -> {
 
+      //пройденное вемя = текущее - стартовое
       elapsedTime = (System.currentTimeMillis() - startTime);
 
       if (getOnTimerListener() != null) {
+        //Передаем пройденное время в активити
         getOnTimerListener().onTick(elapsedTime);
       }
 
+      //Передаем объект Runnable и время задержки (=1000)
       handler.postDelayed(timerTask, DELAY_MILLIS);
 
     };
